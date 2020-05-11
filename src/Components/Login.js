@@ -1,8 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';  
-import './App.css';
+import logo from './Styles/logo.svg';  
+import './Styles/Login.css';
 
-function App() {
+function Login() {
   return (
     <div className="App">
       <header className="Header">
@@ -13,11 +13,15 @@ function App() {
       <div className="App-body">
         <div className="Login-box">
           <div className="Headline">
-            Login
+            <span>Login</span>
           </div>
           <div className="Input-box">
             <input type="text" placeholder="Username"></input>
             <input type="password" placeholder="Password"></input>
+          </div>
+          <div className="Remember">
+            <input type="checkbox"/>
+            <span>Remember me</span>
           </div>
           <div className="Login-button">
             <span>Enter</span>
@@ -32,4 +36,4 @@ function App() {
   );
 }
 
-export default App;
+export default Login;
