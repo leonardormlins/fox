@@ -1,10 +1,17 @@
 import React from 'react';
+import logoMinor from './Styles/logoMinor.svg'
 import './Styles/Home.css';
 
 function Home() {
   return (
     <div className="Home">
-      
+      <header>
+        <div className="Minor-logo">
+          <img src={logoMinor} alt="logoMinor"/>
+        </div>
+
+        <div className="Header-line"></div>
+      </header>
       <section className="Navbar">
         <div className="Options">
           <div>

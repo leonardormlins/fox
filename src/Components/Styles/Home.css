@@ -3,6 +3,8 @@ html, body, h2 {
   padding: 0;
 }
 
+/* NavBar */
+
 .Home {
   font-family: 'Geo';
 }
@@ -40,3 +42,18 @@ span.material-icons.md-light{
   margin: 1vh 3vw 0 3vw;
   cursor: pointer;
 }
+
+/* Header */
+
+.Header-line {
+  background-color: #2660A4;
+  display: flex;
+  min-width: 100vw;
+  min-height: 1vh;
+}
+
+.Minor-logo {
+  max-height: 80px;
+  margin-left: 30vw;
+}
+
