@@ -1,0 +1,31 @@
+html, body, h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.Home {
+  font-family: 'Geo';
+}
+
+.Navbar {
+  background-color: #2660A4;
+  position: absolute;
+  bottom: 0;
+  min-width: 100vw;
+  min-height: 10vh;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.Options {
+  color: #ffffff;
+  text-align: center;
+  padding: 2vh;
+}
+
+.material-icons.md-light { color: #ffffff }
+
+span {
+  margin: 1vh 3vw 0 3vw;
+  cursor: pointer;
+}
