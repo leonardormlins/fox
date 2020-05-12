@@ -21,11 +21,22 @@ html, body, h2 {
   color: #ffffff;
   text-align: center;
   padding: 2vh;
+  display: flex;
+  justify-content: center;
+}
+
+.Option {
+
 }
 
 .material-icons.md-light { color: #ffffff }
 
-span {
+.Icon-info {
+  display: block;
+  cursor: pointer;
+}
+
+span.material-icons.md-light{
   margin: 1vh 3vw 0 3vw;
   cursor: pointer;
 }
