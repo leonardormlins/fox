@@ -13,6 +13,7 @@ function Home() {
 
         <div className="Header-line"></div>
       </header>
+      <div className="Space-top"></div>
       <Card/>
       <Card/>
       <Card/>

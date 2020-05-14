@@ -7,6 +7,7 @@ html, body {
 
 .Home {
   font-family: 'Geo';
+  margin-bottom: 100px;
 }
 
 .Navbar {
@@ -27,8 +28,8 @@ html, body {
   justify-content: center;
 }
 
-.Option {
-
+.Space-top {
+  height: 100px;
 }
 
 .material-icons.md-light { color: #ffffff }
@@ -46,7 +47,9 @@ span.material-icons.md-light{
 /* Header */
 
 .Header-app {
-  
+  position: fixed;
+  background: #ffffff;
+  width: 100%;
 }
 
 .Header-line {
