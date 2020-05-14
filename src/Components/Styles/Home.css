@@ -1,4 +1,4 @@
-html, body, h2 {
+html, body {
   margin: 0;
   padding: 0;
 }
@@ -11,18 +11,18 @@ html, body, h2 {
 
 .Navbar {
   background-color: #2660A4;
-  position: absolute;
   bottom: 0;
-  min-width: 100vw;
-  min-height: 10vh;
+  width: 100%;
+  height: 90px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  position: fixed;
 }
 
 .Options {
   color: #ffffff;
   text-align: center;
-  padding: 2vh;
+  padding: 10px 50px;
   display: flex;
   justify-content: center;
 }
@@ -39,17 +39,21 @@ html, body, h2 {
 }
 
 span.material-icons.md-light{
-  margin: 1vh 3vw 0 3vw;
+  margin: 1vh 30px 10px 30px;
   cursor: pointer;
 }
 
 /* Header */
 
+.Header-app {
+  
+}
+
 .Header-line {
   background-color: #2660A4;
   display: flex;
-  min-width: 100vw;
-  min-height: 1vh;
+  width: 100%;
+  height: 1vh;
 }
 
 .Minor-logo {
