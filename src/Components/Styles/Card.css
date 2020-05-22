@@ -19,7 +19,6 @@
 }
 
 .Avatar-card {
-  background: url(https://medias.fashionnetwork.com/image/upload/v1/medias/ab4a10f7679ea2c38819c8c900904f2b2943745.jpg) center/cover;
   border-radius: 100%;
   height: 50px;
   width: 50px;
@@ -33,7 +32,12 @@
 
 .Media-card {
   display: block;
-  background: url(https://www.biography.com/.image/t_share/MTY3MDUxMjkzMjI1OTIwMTcz/brad-pitt-attends-the-premiere-of-20th-century-foxs--square.jpg) center/cover;
+  background: center/cover;
+  width: 350px;
+  height: 350px;
+}
+
+.Image-post {
   width: 350px;
   height: 350px;
 }

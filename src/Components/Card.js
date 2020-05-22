@@ -2,20 +2,20 @@ import React from 'react';
 import './Styles/Card.css';
 
 class Card extends React.Component {
-  constructor(props){
-    super(props);
-    console.log(this.props);
-  }
-
   render() {
+    console.log(this.props);
     return (
       <div className="Card">
         <div className="Content-card">
           <div className="Top-card">
-            <div className="Avatar-card"></div>
+            <div>
+              <img className="Avatar-card" src={this.props.pp}></img>
+            </div>
             <span className="Username-card">{this.props.username}</span>
           </div>
-          <div className="Media-card"></div>
+          <div>
+            <img className="Image-post" src={this.props.media}></img>
+          </div>
           <div className="Bottom-card">
           <p className="Action">Like</p>
           <p className="Action">Comment</p>
