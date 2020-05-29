@@ -1,14 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import Login from './Components/Login';
-import Home from './Components/Home';
+import Root from './Components/Root';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <React.StrictMode>
-    {/* <Login /> */}
-    < Home />
-  </React.StrictMode>,
+  <Root></Root>,
   document.getElementById('root')
 );
 
