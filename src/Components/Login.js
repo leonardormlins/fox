@@ -5,14 +5,14 @@ import logo from './Styles/logo.svg';
 import './Styles/Login.css';
 
 function initialState() {
-  return {user: '', password: ''}
+  return {username: '', password: ''}
 }
 
 function login({username, password}) {
-  if ( username === 'admin' && password === 'admin' )  {
-    return {token: 'qsdfasdfasdasdqwerqw'}
+  if ( username === 'admin' && password === 'admin' ) {
+    return {token: 'qsdfasdfasdasdqwerqw', error: null}
   } 
-  return { error: 'Usuário ou senha inválido(s)' }
+  return { error: 'Username or password incorrect' }
 }
 
 const Login = () => {
