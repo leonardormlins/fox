@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import logoMinor from './Styles/logoMinor.svg';
 import Card from './Card';
 import './Styles/Home.css';
 
-class Home extends React.Component {
-  state = {
+function initialState() {
+  return {
     posts: [
       {
         author: 'TomCruise',
@@ -28,45 +29,47 @@ class Home extends React.Component {
       }
     ]
   }
+}
 
-  render() {
-    return (
-      <div className="Home">
-        <header className="Header-app">
-          <div className="Minor-logo">
-            <img src={logoMinor} alt="logoMinor"/>
+const Home = () => {
+  const [values] = useState(initialState);
+
+  return (
+    <div className="Home">
+      <header className="Header-app">
+        <div className="Minor-logo">
+          <img src={logoMinor} alt="logoMinor"/>
+        </div>
+
+        <div className="Header-line"></div>
+      </header>
+      <div className="Space-top"></div>
+
+      {values.posts.map(post => <Card key={post.author} username={post.author} pp={post.profilePic} media={post.media}/>)}
+      
+      <div className="Space"></div>
+      <section className="Navbar">
+        <div className="Options">
+          <Link to='/'>
+            <span className="material-icons md-light">home</span>
+            <div className="Icon-info">Home</div>
+          </Link>
+          <div>
+            <span className="material-icons md-light">search</span>
+            <div>Search</div>
           </div>
-
-          <div className="Header-line"></div>
-        </header>
-        <div className="Space-top"></div>
-
-        {this.state.posts.map(post => <Card key={post.author} username={post.author} pp={post.profilePic} media={post.media}/>)}
-        
-        <div className="Space"></div>
-        <section className="Navbar">
-          <div className="Options">
-            <div>
-              <span className="material-icons md-light">home</span>
-              <div className="Icon-info">Home</div>
-            </div>
-            <div>
-              <span className="material-icons md-light">search</span>
-              <div>Search</div>
-            </div>
-            <div>
-              <span className="material-icons md-light">people</span>
-              <div>People</div>
-            </div>
-            <div>
-              <span className="material-icons md-light">person</span>
-              <div>Profile</div>
-            </div>
+          <div>
+            <span className="material-icons md-light">people</span>
+            <div>People</div>
           </div>
-        </section>
-      </div>
-    );
-  }
+          <Link to="/profile">
+            <span className="material-icons md-light">person</span>
+            <div>Profile</div>
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
 }
 
 export default Home;

@@ -8,12 +8,14 @@ import StoreProvider from './Store/Provider';
 import RoutesPrivate from './Routes/Private/Private';
 import Home from './Home';
 import Login from './Login';
+import Profile from './Profile';
 
 const PagesRoot = () => (
   <Router>
     <StoreProvider>
       <Switch>
         <Route path='/login' component={Login}/>
+        <RoutesPrivate path='/profile' component={Profile}/>
         <RoutesPrivate path='/' component={Home}/>
       </Switch>  
     </StoreProvider>
