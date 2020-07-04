@@ -51,7 +51,7 @@ span.material-icons.md-light{
 
 span.material-icons{
   cursor: pointer;
-  font-size: 17px;
+  font-size: 20px;
 }
 
 /* Header */
@@ -76,8 +76,8 @@ span.material-icons{
 }
 
 .Logout-button {
-  margin-top: -20px;
-  margin-right: 60px;
+  margin-top: -25px;
+  margin-right: 10vw;
   margin-bottom: 5px;
   color: #F15025;
   display: flex;
@@ -87,4 +87,5 @@ span.material-icons{
 
 .Logout-text {
   cursor: pointer;
+  font-size: 20px;
 }
