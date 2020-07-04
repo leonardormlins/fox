@@ -34,7 +34,7 @@ a{
 }
 
 .Space-top {
-  height: 90px;
+  height: 85px;
 }
 
 .material-icons.md-light { color: #ffffff }
@@ -47,6 +47,11 @@ a{
 span.material-icons.md-light{
   margin: 1vh 30px 10px 30px;
   cursor: pointer;
+}
+
+span.material-icons{
+  cursor: pointer;
+  font-size: 17px;
 }
 
 /* Header */
@@ -62,6 +67,7 @@ span.material-icons.md-light{
   display: flex;
   width: 100%;
   height: 1vh;
+  position: absolute;
 }
 
 .Minor-logo {
@@ -69,3 +75,16 @@ span.material-icons.md-light{
   margin-left: 30vw;
 }
 
+.Logout-button {
+  margin-top: -20px;
+  margin-right: 60px;
+  margin-bottom: 5px;
+  color: #F15025;
+  display: flex;
+  justify-content: flex-end;
+  font-weight: bold;
+}
+
+.Logout-text {
+  cursor: pointer;
+}
