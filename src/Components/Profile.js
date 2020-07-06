@@ -1,10 +1,30 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import StoreContext from './Store/Context';
 import { Link } from 'react-router-dom';
+import ProfileBar from './ProfileBar';
+import Card from './Card';
+import AddPictureButton from './AddPictureButton';
 import logoMinor from './Styles/logoMinor.svg';
 import './Styles/Home.css';
 
+function initialState() {
+    return {
+        username: 'Admin',
+        picture: 'https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png',
+        numbersOfFollowers: 15,
+        numbersOfFollowing: 4,
+        posts: [
+            {
+              author: 'Admin',
+              profilePic: 'https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png',
+              media: 'https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png' 
+            },
+          ]
+    }
+}
+
 const Profile = () => {
+    const [ values ] = useState(initialState);
     const { setToken } = useContext(StoreContext);
 
     function handleLogout() {
@@ -27,6 +47,15 @@ const Profile = () => {
             </header>
             <div className="Space-top"></div>
 
+            <ProfileBar props={values}/>
+            <div className="NumberOfFollowers">
+                Followers: {values.numbersOfFollowers} | Following: {values.numbersOfFollowing}
+            </div>
+            
+            <AddPictureButton/>
+            {false ? <p className="No-posts">Não existem publicações</p> : <br/>}
+            {values.posts.map(post => <Card key={post.author} username={post.author} pp={post.profilePic} media={post.media}/>)}
+
             <div className="Space"></div>
             <section className="Navbar">
             <div className="Options">
@@ -40,7 +69,7 @@ const Profile = () => {
                 </div>
                 <div>
                     <span className="material-icons md-light">people</span>
-                    <div>Profile</div>
+                    <div>People</div>
                 </div>
                 <Link to='/profile'>
                     <span className="material-icons md-light">person</span>
