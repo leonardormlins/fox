@@ -9,15 +9,15 @@ import './Styles/Home.css';
 
 function initialState() {
     return {
-        username: 'Admin',
-        picture: 'https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png',
+        username: 'Leo',
+        picture: 'https://pbs.twimg.com/media/EAMHds8XkAEMldD.jpg',
         numbersOfFollowers: 15,
         numbersOfFollowing: 4,
         posts: [
             {
-              author: 'Admin',
-              profilePic: 'https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png',
-              media: 'https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png' 
+              author: 'Leo',
+              profilePic: 'https://pbs.twimg.com/media/EAMHds8XkAEMldD.jpg',
+              media: 'https://pbs.twimg.com/media/EAMHds8XkAEMldD.jpg' 
             },
           ]
     }
