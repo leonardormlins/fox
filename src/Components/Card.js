@@ -17,8 +17,6 @@ class Card extends Component {
             <img className="Image-post" src={this.props.media} alt="media"></img>
           </div>
           <div className="Bottom-card">
-          <p className="Action">Like</p>
-          <p className="Action">Comment</p>
           </div>
         </div>
       </div>

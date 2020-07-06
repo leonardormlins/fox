@@ -65,10 +65,10 @@ const Home = () => {
             <span className="material-icons md-light">home</span>
             <div className="Icon-info">Home</div>
           </Link>
-          <div>
-            <span className="material-icons md-light">search</span>
-            <div>Search</div>
-          </div>
+          <Link to='/search'>
+              <span className="material-icons md-light">search</span>
+              <div>Search</div>
+          </Link>
           <div>
             <span className="material-icons md-light">people</span>
             <div>People</div>

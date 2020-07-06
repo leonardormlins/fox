@@ -100,3 +100,19 @@ span.material-icons{
   margin: 25px;
   text-align: center;
 }
+
+.Search-box{
+  display: flex;
+  justify-content: center;
+}
+
+.Search-input{
+  margin: 30px;
+}
+
+.Search-button{
+  margin-top: 25px;
+  margin-bottom: 25px;
+  background-color: #F15025;
+  max-height: 40px;
+}
