@@ -80,3 +80,17 @@
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+
+.Follow-button {
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+  background-color: #F15025;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  min-height: 20px;
+}
+
+.Not-found { 
+  text-align: center;
+}

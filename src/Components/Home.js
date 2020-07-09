@@ -5,31 +5,34 @@ import axios from 'axios';
 import logoMinor from './Styles/logoMinor.svg';
 import Card from './Card';
 import './Styles/Home.css';
+import { set } from 'js-cookie';
 
 function initialState() {
-  return {}
+  return { }
 }
 
 const Home = () => {
-  const [values] = useState(initialState);
   const [following, setFollowing] = useState([]);
-  const [feedPosts, setFeedPosts] = useState([]);
+  const [allPosts, setAllPosts] = useState([]);
   const { setToken, username, token } = useContext(StoreContext);
 
   useEffect(()=> {
     axios.get('user/followed/'+username)
-    .then(resp=> setFollowing(resp.data));
+    .then(resp=> {
+      setFollowing(resp.data)
+    });
   },[])
 
-  // useEffect(()=> {
-  //   following.map(user => {
-  //     axios.get('post/user/'+user.name)
-  //     .then(resp => {
-  //       setFeedPosts(...feedPosts, resp.data)
-  //     })
-  //   })
+  useEffect(() => {
     
-  // },[following])
+    following.map( user => {
+      axios.get('post/user/'+user.name)
+      .then(resp => {
+        setAllPosts(allPosts.concat(resp.data))
+      })
+      }) 
+    
+  },[following])
 
   function handleLogout(){
     return setToken('');
@@ -51,8 +54,8 @@ const Home = () => {
       </header>
       <div className="Space-top"></div>
 
-      {console.log('feedPosts:', feedPosts)}
-      {feedPosts.map(post => <Card key={post.pictureLink} username={post.author.name} pp={post.author.profilePhoto} media={post.pictureLink}/>)} 
+      {console.log('>>:', allPosts)}
+      {allPosts.map(post => <Card key={post.pictureLink} username={post.author.name} pp={post.author.profilePhoto} media={post.pictureLink}/>)} 
       
       <div className="Space"></div>
       <section className="Navbar">
