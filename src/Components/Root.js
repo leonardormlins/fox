@@ -10,12 +10,18 @@ import Home from './Home';
 import Login from './Login';
 import Profile from './Profile';
 import Search from './Search';
+import Register from './Register';
+
+import axios from 'axios';
+
+axios.defaults.baseURL = 'http://localhost:8081/api'
 
 const PagesRoot = () => (
   <Router>
     <StoreProvider>
       <Switch>
         <Route path='/login' component={Login}/>
+        <Route path='/register' component={Register}/>
         <RoutesPrivate path='/profile' component={Profile}/>
         <RoutesPrivate path='/search' component={Search}/>
         <RoutesPrivate path='/' component={Home}/>

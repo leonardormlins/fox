@@ -3,12 +3,12 @@ import './Styles/ProfileBar.css';
 
 
 
-const AddPictureButton = () => {
+const AddPictureButton = (props) => {
 
     return (
       <div className="AddPictureButton">
         <div className="Button-add"> 
-          + Add picture
+          {props.text}
         </div>
       </div>
     );

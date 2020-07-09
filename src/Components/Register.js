@@ -1,19 +1,18 @@
 import React, { useState, useContext } from 'react';
 import StoreContext from './Store/Context';
-import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import logo from './Styles/logo.svg';  
 import './Styles/Login.css';
 import axios from 'axios';
 
 function initialState() {
-  return {username: '', password: ''}
+  return {username: '', password: '', repeatPassword: ''}
 }
 
 const Login = () => {
   const [values, setValues] = useState(initialState);
   const [error, setError] = useState(null);
-  const { setToken, setUsername } = useContext(StoreContext);
+  const { setToken } = useContext(StoreContext);
   const history = useHistory();
   
   function onChange(event) {
@@ -26,19 +25,19 @@ const Login = () => {
   }
 
   async function onSubmit() {
-    axios.post('user/login', 
+    if (!(values.password === values.repeatPassword)) return console.log('senhas diferentes')
+    console.log('senhas conferem');
+    axios.post('user/register', 
     {
       "name": values.username,
       "password": values.password 
     }).then( resp => {
       console.log(resp)
-      const username = values.username;
-      const token = resp.data.token;
-      const error = null ;
+      const token = resp.data.token
+      const error = null 
 
       if (token) {
         setToken(token);
-        setUsername(username)
         return history.push('/');
       }
   
@@ -46,7 +45,8 @@ const Login = () => {
       setValues(initialState);
     } )
     .catch( error => console.log('Login error: ', error))
-     
+    
+    
   }
 
   return (
@@ -59,25 +59,21 @@ const Login = () => {
       <div className="App-body">
         <div className="Login-box">
           <div className="Headline">
-            <span>Login</span>
+            <span>Register</span>
           </div>
           <div className="Input-box">
             <input type="text" name="username" placeholder="Username" 
               value={values.username} onChange={onChange}></input>
             <input type="password" name="password" placeholder="Password"
               value={values.password} onChange={onChange}></input>
+            <input type="password" name="repeatPassword" placeholder="Repeat Password"
+              value={values.repeatPassword} onChange={onChange}></input>
               {error}
           </div>
-          <div className="Remember">
-            <input type="checkbox"/>
-            <span>Remember me</span>
-          </div>
+
           <div className="Login-button" onClick={onSubmit}>
-            <span>Enter</span>
+            <span>Register</span>
           </div>
-          <Link to='/register' className="Login-button brow">
-            <span>Create account</span>
-          </Link>
         </div>
       </div>
 

@@ -67,8 +67,9 @@
 }
 
 .Button-add{
+  margin-bottom: 5px;
   cursor: pointer;
-  min-width: 100px;
+  min-width: 280px;
   min-height: 30px;
   padding-top: 10px;
   text-align: center;

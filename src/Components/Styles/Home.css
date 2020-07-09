@@ -116,3 +116,10 @@ span.material-icons{
   background-color: #F15025;
   max-height: 40px;
 }
+
+.Modal {
+  font-family: 'Geo';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

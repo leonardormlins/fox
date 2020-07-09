@@ -27,7 +27,8 @@ const Search = () => {
             </header>
             <div className="Space-top"></div>
 
-            <div className='Search-box'>
+            {/* Content */}
+            <div className='Search-box'>div
                 <input className='Search-input' type='text' placeholder='Search'/>
                 <div className='Search-button'>
                     <span className="material-icons md-light">search</span>

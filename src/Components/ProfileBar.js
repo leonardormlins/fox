@@ -4,16 +4,16 @@ import './Styles/ProfileBar.css';
 
 
 const ProfileBar = (user) => {
-    console.log('Props profile bar: ', user)
+  console.log('profilebar?: ', user)
 
     return (
       <div className="Profile-bar">
         <div className="Content-box">
           <div className="Top-box">
             <div>  
-                <img className="Avatar-card" src={user.props.picture} alt="pic"></img>
+                <img className="Avatar-card" src={user.props.profilePhoto} alt="pic"></img>
             </div>
-            <span className="Username-card">{user.props.username}</span>
+              <span className="Username-card">{user.props.name}</span> 
           </div>
         </div>
       </div>
