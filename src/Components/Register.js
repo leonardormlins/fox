@@ -12,7 +12,7 @@ function initialState() {
 const Login = () => {
   const [values, setValues] = useState(initialState);
   const [error, setError] = useState(null);
-  const { setToken } = useContext(StoreContext);
+  const { setToken, setUsername } = useContext(StoreContext);
   const history = useHistory();
   
   function onChange(event) {
@@ -37,6 +37,7 @@ const Login = () => {
       const error = null 
 
       if (token) {
+        setUsername(values.username)
         setToken(token);
         return history.push('/');
       }
