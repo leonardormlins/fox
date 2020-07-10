@@ -11,8 +11,8 @@ const ProfileBar = (user) => {
 
   function handleFollow() {
     const config = { headers: { Authorization: `Bearer ${token}` } }
-    const bodyParameter = { "name": username };
-    axios.post('user/follow/'+user.props.name,bodyParameter, config)
+    const bodyParameter = { "name": user.props.name };
+    axios.post('user/follow/',bodyParameter, config)
   }
   
   if(user.props.name !== undefined) { 

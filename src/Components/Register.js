@@ -26,7 +26,6 @@ const Login = () => {
 
   async function onSubmit() {
     if (!(values.password === values.repeatPassword)) return console.log('senhas diferentes')
-    console.log('senhas conferem');
     axios.post('user/register', 
     {
       "name": values.username,
@@ -34,7 +33,6 @@ const Login = () => {
     }).then( resp => {
       console.log(resp)
       const token = resp.data.token
-      const error = null 
 
       if (token) {
         setUsername(values.username)
@@ -42,11 +40,12 @@ const Login = () => {
         return history.push('/');
       }
   
+    })
+    .catch( error => {
       setError(error);
       setValues(initialState);
-    } )
-    .catch( error => console.log('Login error: ', error))
-    
+      console.log('Login error: ', error);
+    }) 
     
   }
 
@@ -69,7 +68,7 @@ const Login = () => {
               value={values.password} onChange={onChange}></input>
             <input type="password" name="repeatPassword" placeholder="Repeat Password"
               value={values.repeatPassword} onChange={onChange}></input>
-              {error}
+              {error ? <p>Can't register</p> : null}
           </div>
 
           <div className="Login-button" onClick={onSubmit}>

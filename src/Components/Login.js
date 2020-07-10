@@ -34,18 +34,18 @@ const Login = () => {
       console.log(resp)
       const username = values.username;
       const token = resp.data.token;
-      const error = null ;
 
       if (token) {
         setToken(token);
         setUsername(username)
         return history.push('/');
       }
-  
+    } )
+    .catch( error => {
       setError(error);
       setValues(initialState);
-    } )
-    .catch( error => console.log('Login error: ', error))
+      console.log('Login error: ', error);
+    })
      
   }
 
@@ -66,7 +66,7 @@ const Login = () => {
               value={values.username} onChange={onChange}></input>
             <input type="password" name="password" placeholder="Password"
               value={values.password} onChange={onChange}></input>
-              {error}
+              {error ? <p>User or password incorrect</p> : null}
           </div>
           <div className="Remember">
             <input type="checkbox"/>

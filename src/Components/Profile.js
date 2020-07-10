@@ -78,10 +78,11 @@ const Profile = () => {
         if ( values.pictureToInsert ) {
             const config = { headers: { Authorization: `Bearer ${token}` } }
             const bodyParameter = { "profilePhoto": values.pictureToInsert };
-            axios.post('user/updatePhoto/' + username, bodyParameter, config)
+            axios.post('user/updatePhoto/', bodyParameter, config)
                 .then(resp => {
-                    setValues(values.profilePhoto)
                     handleClose()
+                    setValues({name:values.name, id: values.id, profilePhoto:values.profilePhoto})
+                    console.log('testing valuess:',values)
                 })
         }
     }
@@ -144,6 +145,7 @@ const Profile = () => {
                 <AddPictureButton text="Add photo" />
             </div>
 
+            {console.log('testing values before:',values)}
             {false ? <p className="No-posts">Não existem publicações</p> : <br />}
             {posts.map(post => console.log('>>',post))}
             {posts.map(post => <Card key={post.pictureLink} username={post.author.name} pp={post.author.profilePhoto} media={post.pictureLink}/>)}
@@ -159,10 +161,10 @@ const Profile = () => {
                         <span className="material-icons md-light">search</span>
                         <div>Search</div>
                     </Link>
-                    <div>
+                    <Link to='/people'>
                         <span className="material-icons md-light">people</span>
                         <div>People</div>
-                    </div>
+                    </Link>
                     <Link to='/profile'>
                         <span className="material-icons md-light">person</span>
                         <div>Profile</div>

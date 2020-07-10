@@ -73,10 +73,10 @@ const Search = () => {
                     <span className="material-icons md-light">search</span>
                     <div>Search</div>
                 </Link>
-                <div>
+                <Link to='/people'>
                     <span className="material-icons md-light">people</span>
                     <div>People</div>
-                </div>
+                </Link>
                 <Link to='/profile'>
                     <span className="material-icons md-light">person</span>
                     <div>Profile</div>
