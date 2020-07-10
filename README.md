@@ -1,9 +1,9 @@
 ## Social Network Fox
 
 ### Preview deployed
-https://foxsocialnetwork.netlify.app \
+https://foxsocialnetwork.netlify.app 
 
-Frameworks: \
+Frameworks: 
   - React
   
 
