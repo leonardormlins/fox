@@ -49,7 +49,7 @@ const Home = () => {
       </header>
       <div className="Space-top"></div>
 
-      { allPosts ? <h2 className="Not-found">No posts, you need to follow someone</h2> : null}
+      { allPosts.length === 0 ? (<h2 className="Not-found">No posts, you need to follow someone</h2>) : null}
       {allPosts.map(array => array.map( post => <Card key={post.pictureLink} username={post.author.name} pp={post.author.profilePhoto} media={post.pictureLink}/>))}
       
       <div className="Space"></div>
